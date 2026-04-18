@@ -1,40 +1,53 @@
-<script>
-	import { Button } from '$lib/components/ui/button';
-	import Logo from '$lib/components/ui/Logo.svelte';
+<script lang="ts">
+	import {
+		faBluesky,
+		faDiscord,
+		faGithub,
+		faInstagram,
+		faTwitter,
+		faYoutube,
+	} from '@fortawesome/free-brands-svg-icons';
+	import { icon, type IconDefinition } from '@fortawesome/fontawesome-svg-core';
+	import Logo from '$lib/assets/logo.png';
+	import Lobby from '$lib/assets/lobby.png';
 </script>
 
+{#snippet Social(iconDefinition: IconDefinition, url: string)}
+	<a href={url} class="transition-all hover:scale-110 hover:text-amber-50">
+		{@html icon(iconDefinition).html}
+	</a>
+{/snippet}
+
 <section
-	id="hero"
-	class="flex w-full flex-col items-center justify-center gap-2 overflow-hidden pt-50 pb-25 text-center text-balance"
+	class="flex h-screen w-screen flex-col items-center justify-center gap-2 overflow-scroll bg-[#20030a] p-16 text-center text-[#8F5921] *:z-10"
 >
 	<img
-		src="/media/terrain.png"
-		alt="Landscape view of Chapter 1 from the sea"
-		class="absolute top-0 left-0 -z-1 h-full w-full object-cover object-center brightness-67"
+		src={Lobby}
+		aria-hidden={true}
+		alt="Hellscape"
+		class="fixed z-0 h-full w-full scale-120 object-cover object-center opacity-50 blur-xs brightness-20 select-none"
 	/>
-	<h1 class="sr-only">Welcome To Hell</h1>
-	<Logo class="w-full max-w-90" />
-	<p class="heading text-6xl">Chapter 1</p>
-	<p class="mb-4 text-4xl">Launching in 2026</p>
-	<Button variant="default">Follow Development</Button>
-</section>
-
-<section class="w-full gap-4 bg-background px-40 py-20 text-center">
-	<div class="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2">
-		<h2 class="sr-only">About Welcome To Hell</h2>
-		<span class="heading inline-flex flex-col items-center gap-2 text-xl">
-			A little bit about <Logo class="w-full max-w-100" />
-		</span>
-		<div class="flex flex-col gap-2 text-left">
-			<span class="heading text-xl">You're our Pilot.</span>
-			<p>
-				Welcome To Hell is an experimental tower-obby game focused on fresh gameplay and true-to-its-roots inspirations,
-				all woven together with a rewarding narrative.
-			</p>
-			<p>
-				Endless towers pierce the sky, rising from rosefields long scorched. Whatever ended civilization is over, but
-				its consequences remain. You wished it wasn't this hard.
-			</p>
-		</div>
+	<img src={Logo} alt="Welcome To Hell Logo" class="mb-4 w-96" />
+	<h1 class="relative z-10 w-full text-center text-5xl leading-11 font-bold text-amber-50">
+		Chapter 1
+		<!-- wtf lmao -->
+		<i
+			class="absolute top-0 left-0 -z-10 inline-flex h-full w-full items-center justify-center text-6xl font-light tracking-widest text-[#8F5921] opacity-50"
+			>A Star Upon A Child</i
+		>
+		<br />
+		<span class="mr-px">December 2026</span>
+	</h1>
+	<p class="max-w-[60ch] text-sm text-balance">
+		<span class="font-semibold">Welcome To Hell</span> is an experimental tower-obby game with inventive gameplay expanding
+		on true-to-its-roots inspirations, all woven together with a rewarding narrative, set in an incinerated Caelum.
+	</p>
+	<div class="mt-2 flex items-center justify-center gap-1">
+		{@render Social(faDiscord, 'https://discord.gg/9Fuv68NcSt')}
+		{@render Social(faYoutube, 'https://www.youtube.com/@welcomestohell')}
+		{@render Social(faInstagram, 'https://www.instagram.com/welcomestohell/')}
+		{@render Social(faBluesky, 'https://bsky.app/profile/welcomestohell.com')}
+		{@render Social(faTwitter, 'https://x.com/welcomestohell')}
+		{@render Social(faGithub, 'https://github.com/welcomestohell')}
 	</div>
 </section>

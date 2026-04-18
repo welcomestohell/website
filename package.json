@@ -66,6 +66,8 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
-		"@fontsource/titillium-web": "^5.2.8"
+		"@fontsource/titillium-web": "^5.2.8",
+		"@fortawesome/fontawesome-svg-core": "^7.2.0",
+		"@fortawesome/free-brands-svg-icons": "^7.2.0"
 	}
 }
