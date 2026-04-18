@@ -32,7 +32,7 @@
 	/>
 	<meta name="robots" content="noindex, nofollow" />
 	<meta name="language" content="English" />
-	<meta name="theme-color" content="#8F5921" /><meta name="twitter:title" content="Title" />
+	<meta name="theme-color" content="#8F5921" /><meta name="twitter:title" content="Welcome To Hell" />
 	<meta
 		name="twitter:description"
 		content="Welcome To Hell is an experimental tower-obby game with inventive gameplay expanding on true-to-its-roots inspirations, all woven together with a rewarding narrative, set in an incinerated Caelum."
